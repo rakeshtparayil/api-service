@@ -2,14 +2,10 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import psycopg
-import os
-from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv('/Users/rakesh/Desktop/API/streamlit/.env')
 
 # Get the database connection string from .env
-dbconn = os.getenv('DB_CONN')
+dbconn = st.secrets["DB_CONN"]
 
 # Verify if the connection string is loaded correctly
 if dbconn is None:
